@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .form-section {
+        display: none;
+    }
+
+    .main {
+        color: blueviolet;
+    }
+
+    .main1 {
+        color: red;
+    }
+
+    .main3 {
+        color: skyblue;
+    }
+</style>
+
+<body>
+    <h3> <b>TEST-1</b> one Radio button to show the dropdown with courses else hide the dropdown,<br>
+        on submit show the name, email course if selected on alert</h3>
+
+    <input type="radio" id="html" name="fav_language" value="html" onclick="myfunction()">
+    <label for="html" class="main1">YES</label><br>
+    <input type="radio" id="javascript" name="fav_language" value="javascript" onclick="myfunction()">
+    <label for="javascript" class="main1">NO</label>
+
+    <div class="form-section" id="course-page">
+        <label for="courses" class="main">Select your course:</label>
+        <select name="courses" id="courses">
+            <option value="" class="main3">Select your option</option>
+            <option value="python" class="main3">Python</option>
+            <option value="digital marketing" class="main3">Digital Marketing</option>
+            <option value="java" class="main3">Java</option>
+        </select>
+    </div>
+
+    <br>
+    <button onclick="myfunctionchange()">submit</button>
+    
+    <script>
+
+        function myfunction() {
+            let htmlSelected = document.getElementById("html");
+            let coursepage = document.getElementById("course-page");
+
+            if (htmlSelected.checked) {
+                coursepage.style.display = "block";
+            } else {
+                coursepage.style.display = "none";
+            }
+        }
+
+        function myfunctionchange() {
+            let name = (prompt("Enter the name:"));
+            let email = (prompt("Enter the email:"));
+            let courses = document.getElementById("courses").value;
+
+            let message = `name : ${name} \n email : ${email}\n`;
+            if (courses) {
+                message += `courses : ${courses}`;
+            }
+            else {
+                message += "courses: select the courses from dropdown list.....!";
+            }
+            alert(message);
+        }
+
+    </script>
+
+</body>
+
+</html>

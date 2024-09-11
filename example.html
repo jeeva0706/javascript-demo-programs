@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .states {
+        display: none;
+    }
+
+    .district {
+        display: none;
+    }
+</style>
+
+<body>
+
+    <h2 style="color: red;">Javascript - Form with country -> state -> district dropdown</h2>
+
+    <label for="country">Choose your country:</label>
+
+    <select name="country" id="country" onchange="showstates()">
+        <option value="">Select your country:</option>
+        <option value="america">America</option>
+        <option value="australia">Australia</option>
+        <option value="india">India</option>
+    </select>
+
+    <div class="states" id="statesDiv">
+        <label for="states">Choose your state:</label>
+        <select name="states" id="states" onchange="showdistrict()">
+            <option value="">Select your state:</option>
+        </select>
+    </div>
+
+    <div class="district" id="districtDiv">
+        <label for="district">Choose a district:</label>
+        <select name="district" id="district">
+            <option value="">Select your district:</option>
+        </select>
+    </div>
+
+    <script>
+        const state = {
+            america: ["Washington", "Alaska", "Colorado"],
+            australia: ["Melbourne", "Victoria", "Tasmania"],
+            india: ["Tamil Nadu", "Kerala", "Karnataka"]
+        };
+        const district1 = {
+            washington: ["Thurston", "Snohomish", "Whatcom"],
+            alaska: ["Anchorage", "Chugach Census", "Dillingham Census"],
+            colorado: ["Joe Neguse", "Lauren Boebert", "Greg Lopez"]
+        };
+
+        const district2 = {
+            melbourne: ["Docklands", "North Melbourne", "South Yarra"],
+            victoria: ["Eastern Victoria", "Northern Victoria", "Northern Metropolitan"],
+            tasmania: ["Arthur Land", "Cornwall Land", "Flinders Land"]
+        };
+
+        const district3 = {
+            kerala: ["Palakadu", "Kochin", "Thirisur"],
+            tamilnadu: ["Salem", "Covai", "Erode"],
+            karnataka: ["Bangaluru", "Mysuru", "Koppal"]
+        };
+
+        function showstates() {
+            const selectcountry = document.getElementById("country").value;
+            const selectstates = document.getElementById("states");
+            
+            
+            selectstates.innerHTML = '<option value="">Select your state</option>';
+            document.getElementById("districtDiv").style.display = "none"; // Hide districts
+            
+            if (selectcountry) {
+                const countrystate = state[selectcountry.toLowerCase()] || [];
+                
+                for (let i = 0; i < countrystate.length; i++) {
+                    const option = document.createElement("option");
+                    option.value = countrystate[i];
+                    option.text = countrystate[i];
+                    selectstates.add(option);
+                }
+
+                document.getElementById("statesDiv").style.display = "block"; // Show states
+            } else {
+                document.getElementById("statesDiv").style.display = "none";
+            }
+        }
+
+        function showdistrict() {
+            const selectstates = document.getElementById("states").value;
+
+            if (selectstates) {
+                document.getElementById("districtDiv").style.display = "block";
+            } else {
+                document.getElementById("districtDiv").style.display = "none";
+            }
+        }
+        
+    </script>
+
+</body>
+
+</html>

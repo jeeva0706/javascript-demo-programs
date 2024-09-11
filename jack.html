@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2 style="color: red;">youtube programs</h2>
+    <p id="demo"></p>
+
+    <script>
+
+        //1.scope 
+        if (true) {
+            var meg = "welcome bro";
+        }
+        console.log(meg);
+
+        //symbol method 
+        const s1 = Symbol() // value : ddnncbfbvb4r4374f
+        console.log(s1);
+        const s2 = Symbol() // value : cdsbfg83riufer83b
+        console.log(s2);
+
+        console.log(s1 == s2);
+
+        //ternary operator 
+        const age = 25;
+        const result = age >= 18 ? "eligible" : "not eligible";
+
+        console.log(result);
+
+        //handling null values
+        function welcome(name) {
+            const result = name ? name : "no name";
+            console.log("welcome" + result);
+        }
+        welcome();
+        welcome(null);
+        welcome('jeeva');
+
+        //object 
+        // user = {'name':'jeeva','age':23};
+        // console.log(usser);
+        // console.log(user.name);
+
+        // const data = (user) => {
+        //     const name= user.name?user.name:"no name";
+        //     return "hello" + name;
+        // }
+        // console.log(data(user));
+
+        //conditional chains
+        const avg = 90;
+        const grade = avg >= 90 ? "A grade" : avg >= 80 ? "B grade" : "c grade"
+        console.log("grade", grade);
+
+        //bitwise operator in js 
+        const y = 12;
+        const z = 24;
+
+        console.log("decimal number : ", y & z);
+
+
+        // Increment (++) or Decrement (--)
+        let e = 1;
+        e++;
+        console.log("Increment :", e);
+
+        let f = 1;
+        f--;
+        console.log("Decrement :", f);
+
+        /* 
+        postFix Increment a++
+        preFix Decrement ++a
+        */
+        let w = 3;
+        const h = w++;          //postFix Increment  
+        console.log("w :", w, "h :", h);
+
+        let r = 3;
+        const s = ++w;   //preFix Decrement   
+        console.log("r :", r, "s :", s);
+
+        /*  
+        if (condition){
+        ............
+        }
+        else {
+        ........
+        }
+        */
+
+        //else if concept 
+
+        let age2 = prompt("enter your age:");
+        if (age != null && age2 >= 18) {
+            console.log("yor are age is 18 blow....");
+        }
+        else {
+            console.log("your are a child.....")
+        }
+
+        const avgmark = prompt("enter your mark:");
+
+        if (avgmark >= 90 && avgmark <= 100) {
+            console.log("grade A");
+        }
+        else if (avgmark >= 70 && avgmark <= 89) {
+            console.log("grade B");
+        }
+        else {
+            console.log("grade C")
+        }
+
+        //Nested if statement 
+
+        let eng = 93, tamil = 85, maths = 34, science = 73;
+        let total, avg4;
+        total = eng + tamil + maths + science;
+        avg4 = total / 4;
+        console.log("total", total);
+        console.log("average", avg4);
+
+        if (eng >= 35 && tamil >= 35 && maths >= 35 && science >= 35) {
+            console.log("result : pass");
+            if (avg4 > 90 && avg4 <= 100) {
+                console.log("grade : A grade");
+            }
+            else if (avg4 > 75 && avg4 <= 89) {
+                console.log("grade : B grade");
+            }
+            else if (avg4 > 50 && avg4 <= 74) {
+                console.log("grade : C grade");
+            }
+            else {
+                console.log("grade : D grade");
+            }
+        }
+        else {
+            console.log("result : fail");
+            console.log("grade : no grade");
+        }
+
+        //switch case 
+        let number = 2;
+
+        switch (number) {
+            case 1:
+                console.log("one");
+                break;
+            case 2:
+                console.log("two");
+                break;
+            case 3:
+                console.log("three");
+                break;
+            default:
+                console.log("invalid number");
+                break;
+        }
+
+        console.log("switch case method");
+
+        //nested switch case 
+
+        let letter = 'a';
+
+        switch (letter) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'A':
+            case 'E':
+            case 'I':
+            case 'O':
+            case 'U':
+                console.log(letter, "is a vowel");
+                break;
+            default:
+                console.log(letter, "is not a vowel");
+                break;
+        }
+
+        //while loop 
+
+        let i = 1; //strating poiont
+
+        while (i <= 10) {
+            console.log(i);
+            i++;
+        }
+
+        //do while 
+
+        /*   
+            do{
+            
+            //code to be executed if the condition ids true
+
+            } while (condition) 
+        */
+
+        let table = 2, limit = 10; i = 1;
+
+        do {
+            console.log(table + " X " + i + " = " + (table * i));
+            i++;
+        } while (i <= limit);  //2<=5 3<=5 4<=5 5<=5
+
+        //for loop method 
+
+        let arr = [];
+
+        for (let i = 0; i <= 100; i++) {
+            arr.push(i);
+        }34
+
+        console.log(arr);
+
+        //for loop nested method 
+
+            let nums =[];
+            for (let i=0;i < 5;i++)
+             {
+                nums.push([]);
+                for(let k = 0; k < 5; k++) 
+                {
+                    nums[i].push(k);
+                }
+            }
+
+            console.table(nums);
+
+            //for of loop 
+
+            let names = ["jeeva","mani","prasanth","thillai"];
+
+            for (let name of names) {
+                console.log("for of loop:", names);
+            }
+
+            //for in loop 
+
+            let fname = {
+                name: "jeeva",
+                age: 23,
+                city: "erode",
+                contact:"8870128610"
+            };
+
+            for (let data in fname) {
+                console.log( data +" :", fname[data]);
+            }    //
+
+            //
+
+            
+            let fname1 = {
+                name: "jeeva",
+                age: 23,
+                city: "erode",
+                contact:"8870128610"
+            };
+
+            let arr_keys = Object.keys(fname1);
+            console.table(arr_keys);
+            console.log("keys datas =>");
+
+            let arr_values = Object.values(fname1);            
+            console.table(arr_values);
+            console.log("values datas =>");
+
+            //for loop using 
+
+            for(let i = 0 ;i < arr_keys; i++) {
+                console.log(arr_keys[i] + " :" + arr_values[i]);
+                //console.log(fname1[arr_keys[i]]);
+            }
+
+            //java script break method 
+
+             for (let i = 0; i <=10;i++) {
+                console.log(i);
+                if (i==4) {
+                    break;
+                }
+             }
+
+             // continue statement 
+
+             for (let i = 0; i <= 10;i++) {
+                console.log(i);
+                if(i % 2==0) {
+                    continue;
+                }
+             }
+
+             //label block in js
+
+            //  let groups = {
+            // grop1 :    ["jeeva", "mani", "ravi"],
+            // grop2 :    ["kumar", "tiya", "sundher"],
+            // grop3 :    ["kavin","jack","thivya"]    
+            //  };
+
+
+             //math FUNCTION 
+
+             var c;
+             let math;
+             c=math.PI;
+             C=math.E;
+             c=math.round(5.8);
+             c=math.round(5.3);
+             c=math.floor(5.2);
+             c=math.ceil(5.3); //out put : 6
+             c=math.sqrt(90);  //
+             c=math.abs(-55); //positive number change
+             c=math.trunc(2.34); //only integer value contain
+             c=math.pow(2,6);  // 2 power of 6 
+             c=math.min(10,20,30,40,50,60,70,80,90,100);
+             c=math.max(10,20,30,40,50,60,70,80,90,100);
+             c=math.random();
+             c=math.floor((math.random()*40+1)); // 1 to 40 any number out put
+             c-math.sign(-33) // nrgative number na -1 positive number 1 0 => eruntha 0
+
+             console.log(c);
+
+    </script>
+
+</body>
+
+</html>

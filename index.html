@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1 style="color: red;">JavaScript Objects using insert, delete, update and show a property</h1>
+
+
+<p id="demo"></p>
+
+<script>
+
+const myVehicle = {
+  brand: 'Ford',
+  model: 'Mustang',
+  color: 'red'
+}
+
+
+function insert(obj, key, value) {
+  obj[key] = value;
+  return obj;
+}
+
+function update(obj, key, value) {
+  obj[key] = value;
+  return obj;
+}
+
+function deleteProperty(obj, key) {
+  delete obj[key];
+  return obj;
+}
+
+function show(obj) {
+  return Object.entries(obj);
+}
+
+let myUpdatedVehicle = {...myVehicle};
+
+myUpdatedVehicle = insert(myUpdatedVehicle, 'type', 'car');
+
+myUpdatedVehicle = update(myUpdatedVehicle, 'color', 'yellow');
+
+myUpdatedVehicle = deleteProperty(myUpdatedVehicle, 'model');
+
+// Display all properties in the console
+
+document.write("updated vechicl :" + Object.entries(myUpdatedVehicle) +"<br>" + "<br>");
+
+document.write("All Properties :", show(myUpdatedVehicle));
+
+
+
+
+</script>
+
+</body>
+</html>

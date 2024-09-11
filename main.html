@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h3>speard operator</h3>
+
+<h3>insert , delete , update & show Datas</h3>
+
+<script>
+
+        function person(name, age, nation, language, native){
+            this.name = name;
+            this.age = age;
+            this.nation = nation;
+            this.language = language;
+            this.native = native;
+         }
+
+         const main= new person("jeeva",18,"indian","tamil","kerala");
+         
+         document.write( "<br>" + "data : " + Object.entries(main));
+
+         //insert 
+
+          main.city = "palakadu";
+          document.write( "<br>" + "insert : " + main.city + "<br>" + "<br>");
+
+          //Delete 
+
+          delete main.language;
+
+          document.write("delete :" + Object.entries(main) + "<br>");
+
+         //update
+         main.language = "hindhi,malaiyam";
+
+         document.write( "<br>" + "update :" + Object.entries(main) +"<br>");
+         
+         //show 
+
+         document.write("<br>" + "show the value:" + Object.entries(main));
+
+         //spread operator 
+
+         const state1 = ["palakadu","kochin","thirisur"];
+         const state2 = ["erode","selam"];
+         
+         const combainsate = [...state1, ...state2];
+
+         document.write( "<br>" + "The combain states :" +combainsate +"<br>");
+
+</script>
+
+
+</body>
+</html>

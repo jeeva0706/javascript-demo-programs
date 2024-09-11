@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<h2>The Spread Operator</h2>
+
+<body>
+
+    <script>
+
+        const number1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        //value,index,array
+        number1.forEach((value) => {
+            console.log(value);
+        });
+
+        const furits = ["apple", "orange", "cherry", "orange"]
+        console.log(furits);
+
+        furits.forEach(furit => console.log(furit));
+
+        //2.example of using thr forEach method to summ all element of an array
+
+        const number = [1, 2, 3, 4, 5, 6, 7, 8];
+        let total = 0;
+        number.forEach(numbers => {
+            total += number;
+        });
+        console.log(total);
+
+        //3.example of using thr forEach method to craete a new array from existing one:
+
+        const value = [];
+        numbers.forEach(number => {
+            value.push(number * 2);
+        });
+        console.log(value);
+
+        //4.using forEach methd to find the max ellement of an array
+        console.log(value);
+        let max = numbers[0];
+        numbers.forEach(number => {
+            if (number > max) {
+                max = number;
+            }
+        });
+        console.log(max);
+
+        //6.using the forEach method to fiter an arrray
+
+        const numbers = [3, 5, 7, 9, 2, 56, 86, 34, 53, 67];
+        const arr = [];
+
+        numbers.forEach(number => {
+            if (number % 2 === 0) {
+                arr.push(number);
+            }
+        });
+        console.log(arr);
+
+
+        //7.example of using the forEach method to update element of an array
+
+        const names = ["jeeva", "mani", "tharanesh", "bharathi"];
+        console.log(names);
+        names.forEach((name, index) => {
+            console.log(name, index);
+            names[index] = name.toUpperCase();
+        });
+        console.log(names);
+
+        //227334  // map() method in java script 
+
+        const number3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        //map (value,index,array)
+
+        let sqrt = number3.map((value) => {
+
+            return Math.sqrt(value).toFixed(2);// .aporom to decimel only show tofixd method
+        });
+
+        console.log(sqrt);
+
+        //1.simple transfromation 
+        const numbers6 = [1,2,3,4,5]; 
+        const doublenumber = number.map(number => number * 2);        
+
+        console.table(doublenumber);
+
+        //2.modifing array element
+        
+
+    </script>
+
+</body>
+
+</html>
